@@ -1,0 +1,153 @@
+
+Discarded input sections
+
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .group         0x00000000        0xc /tmp/ccL1vYDM.o
+ .text          0x00000000        0x0 /tmp/ccL1vYDM.o
+ .data          0x00000000        0x0 /tmp/ccL1vYDM.o
+ .bss           0x00000000        0x0 /tmp/ccL1vYDM.o
+ .text.startup.main
+                0x00000000        0x6 /tmp/ccL1vYDM.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x08000000         0x00080000         xr
+sram             0x20000000         0x00020000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /tmp/ccL1vYDM.o
+LOAD /usr/lib/gcc/arm-none-eabi/14.1.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.1.0/thumb/v7e-m+fp/hard/libgcc.a
+                0x20020000                        _estack = (ORIGIN (sram) + LENGTH (sram))
+
+.vectors        0x08000000      0x1ac
+ *(.vectors)
+ .vectors       0x08000000      0x1ac /tmp/ccL1vYDM.o
+                0x08000000                vector_table
+
+.text           0x080001ac       0xc4
+ *(.text*)
+ .text._systick
+                0x080001ac       0x10 /tmp/ccL1vYDM.o
+                0x080001ac                _systick
+ .text.wait_for_switch
+                0x080001bc       0x24 /tmp/ccL1vYDM.o
+                0x080001bc                wait_for_switch
+ .text.app      0x080001e0       0x3c /tmp/ccL1vYDM.o
+                0x080001e0                app
+ .text._reset   0x0800021c       0x54 /tmp/ccL1vYDM.o
+                0x0800021c                _reset
+
+.glue_7         0x08000270        0x0
+ .glue_7        0x08000270        0x0 linker stubs
+
+.glue_7t        0x08000270        0x0
+ .glue_7t       0x08000270        0x0 linker stubs
+
+.vfp11_veneer   0x08000270        0x0
+ .vfp11_veneer  0x08000270        0x0 linker stubs
+
+.v4_bx          0x08000270        0x0
+ .v4_bx         0x08000270        0x0 linker stubs
+
+.iplt           0x08000270        0x0
+ .iplt          0x08000270        0x0 /tmp/ccL1vYDM.o
+
+.rel.dyn        0x08000270        0x0
+ .rel.iplt      0x08000270        0x0 /tmp/ccL1vYDM.o
+
+.rodata
+ *(.rodata*)
+
+.data           0x20000000        0x0 load address 0x08000270
+                0x20000000                        _sdata = .
+ *(.data SORT_BY_NAME(.data.*))
+                0x20000000                        _edata = .
+                0x08000270                        _sidata = LOADADDR (.data)
+
+.igot.plt       0x20000000        0x0 load address 0x08000270
+ .igot.plt      0x20000000        0x0 /tmp/ccL1vYDM.o
+
+.bss            0x20000000        0x4 load address 0x08000270
+                0x20000000                        _sbss = .
+ *(.bss SORT_BY_NAME(.bss.*) COMMON)
+ .bss.systick_count
+                0x20000000        0x4 /tmp/ccL1vYDM.o
+                0x20000004                        _ebss = .
+OUTPUT(firmware.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000      0x6b5
+ .debug_info    0x00000000      0x6b5 /tmp/ccL1vYDM.o
+
+.debug_abbrev   0x00000000      0x2c5
+ .debug_abbrev  0x00000000      0x2c5 /tmp/ccL1vYDM.o
+
+.debug_loclists
+                0x00000000       0xf7
+ .debug_loclists
+                0x00000000       0xf7 /tmp/ccL1vYDM.o
+
+.debug_aranges  0x00000000       0x40
+ .debug_aranges
+                0x00000000       0x40 /tmp/ccL1vYDM.o
+
+.debug_rnglists
+                0x00000000       0x5b
+ .debug_rnglists
+                0x00000000       0x5b /tmp/ccL1vYDM.o
+
+.debug_macro    0x00000000     0x1797
+ .debug_macro   0x00000000       0xd0 /tmp/ccL1vYDM.o
+ .debug_macro   0x000000d0      0xacc /tmp/ccL1vYDM.o
+ .debug_macro   0x00000b9c      0x190 /tmp/ccL1vYDM.o
+ .debug_macro   0x00000d2c       0x22 /tmp/ccL1vYDM.o
+ .debug_macro   0x00000d4e       0x5b /tmp/ccL1vYDM.o
+ .debug_macro   0x00000da9       0x2a /tmp/ccL1vYDM.o
+ .debug_macro   0x00000dd3       0x94 /tmp/ccL1vYDM.o
+ .debug_macro   0x00000e67       0x43 /tmp/ccL1vYDM.o
+ .debug_macro   0x00000eaa      0x103 /tmp/ccL1vYDM.o
+ .debug_macro   0x00000fad       0x3a /tmp/ccL1vYDM.o
+ .debug_macro   0x00000fe7       0x57 /tmp/ccL1vYDM.o
+ .debug_macro   0x0000103e       0x6a /tmp/ccL1vYDM.o
+ .debug_macro   0x000010a8      0x1df /tmp/ccL1vYDM.o
+ .debug_macro   0x00001287       0x3c /tmp/ccL1vYDM.o
+ .debug_macro   0x000012c3      0x460 /tmp/ccL1vYDM.o
+ .debug_macro   0x00001723       0x22 /tmp/ccL1vYDM.o
+ .debug_macro   0x00001745       0x52 /tmp/ccL1vYDM.o
+
+.debug_line     0x00000000      0x367
+ .debug_line    0x00000000      0x367 /tmp/ccL1vYDM.o
+
+.debug_str      0x00000000     0x566c
+ .debug_str     0x00000000     0x566c /tmp/ccL1vYDM.o
+                               0x5879 (size before relaxing)
+
+.comment        0x00000000       0x23
+ .comment       0x00000000       0x23 /tmp/ccL1vYDM.o
+                                 0x24 (size before relaxing)
+
+.ARM.attributes
+                0x00000000       0x34
+ .ARM.attributes
+                0x00000000       0x34 /tmp/ccL1vYDM.o
+
+.debug_frame    0x00000000       0x80
+ .debug_frame   0x00000000       0x80 /tmp/ccL1vYDM.o
