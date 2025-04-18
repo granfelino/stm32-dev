@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include "app.h"
 
-#define PERIOD (500)
+#define PERIOD (50)
 
 static volatile uint32_t systick_count = 0;
 

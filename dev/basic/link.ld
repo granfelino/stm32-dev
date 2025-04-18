@@ -3,8 +3,8 @@ ENTRY(_reset);		/* define the entry point for the CPU -> the reset interrupt */
 
 /* define memory regions available in the stm32 */
 MEMORY {
-	flash(rx) : ORIGIN=0x08000000, LENGTH=512K		/* flash: non-volatile memory -> data is safe between reboots;    slower access; more space */
-	sram(rwx) : ORIGIN=0x20000000, LENGTH=128K		/* sram:  volatile memory	  -> data is cleared between reboots; faster access; less space */
+	flash(rx) : ORIGIN = 0x08000000, LENGTH = 512K		/* flash: non-volatile memory -> data is safe between reboots;    slower access; more space */
+	sram(rwx) : ORIGIN = 0x20000000, LENGTH = 128K		/* sram:  volatile memory	  -> data is cleared between reboots; faster access; less space */
 }
 
 /* stack is found at the end of the sram and grows downward, hence we define it at the end of the sram*/
