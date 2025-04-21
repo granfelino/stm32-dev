@@ -16,14 +16,14 @@
 #define GPIO_A_BASE     (0x40020000UL)
 
 struct gpio {
-    uint32_t MODER;
-    uint32_t SPEEDR;
-    uint32_t PUPDR;
-    uint32_t IDR;
-    uint32_t ODR;
-    uint32_t BSRR;
-    uint32_t LCKR;
-    uint32_t AFR[2];
+    volatile uint32_t MODER;
+    volatile uint32_t SPEEDR;
+    volatile uint32_t PUPDR;
+    volatile uint32_t IDR;
+    volatile uint32_t ODR;
+    volatile uint32_t BSRR;
+    volatile uint32_t LCKR;
+    volatile uint32_t AFR[2];
 };
 
 /* USAGE EXAMPLE: GPIO_A->MODER |= (1U << 10) */
