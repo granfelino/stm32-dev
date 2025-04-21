@@ -1,5 +1,5 @@
-#ifndef _GPIO_RCC
-#define _GPIO_RCC
+#ifndef _GPIO_RCC_H
+#define _GPIO_RCC_H
 
 #include <inttypes.h>
 #include "reg_util.h"
@@ -26,9 +26,15 @@
 #define RCC_AHB1ENR_OFF (0x30UL)
 #define RCC_APB2ENR_OFF (0x44UL)
 
-/* TODO: move these macros to inline functions */
-#define RCC_AHB1ENR_EN  do { REG32(RCC_BASE + RCC_AHB1ENR_OFF) |= (1U << 0); } while (0)
-#define RCC_APB2ENR_EN  do { REG32(RCC_BASE + RCC_APB2ENR_OFF) |= (1U << 12); } while (0)
+static inline void rcc_ahb1_en() {
+    REG(RCC_BASE + RCC_AHB1ENR_OFF) |= (1U << 0); 
+}
+
+static inline void rcc_apb2_en() {
+    REG(RCC_BASE + RCC_APB2ENR_OFF) |= (1U << 12); 
+}
+
+void rcc_setup();
 
 
-#endif      /* _GPIO_RCC */
+#endif      /* _GPIO_RCC_H */
